@@ -15,13 +15,3 @@ terraform {
     }
   }
 }
-
-resource "aws_s3_bucket" "KristupasThesisBucket" {
-  bucket = "kristupas-thesis-bucket-2024"
-  acl    = "private"
-
-  tags = {
-    Name        = "KristupasThesisBucket"
-    Environment = "Dev"
-  }
-}
