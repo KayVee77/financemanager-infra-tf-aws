@@ -3,6 +3,16 @@
 # =============================================================================
 # CloudFront provides HTTPS which is required for Cognito OAuth2.
 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+      configuration_aliases = [aws]
+    }
+  }
+}
+
 # Cache Policy for no-caching (API endpoints)
 resource "aws_cloudfront_cache_policy" "no_cache" {
   name        = "${var.name_prefix}-no-cache"
